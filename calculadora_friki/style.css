@@ -15,7 +15,7 @@ body {
 }
 
 header {
-    color: #d416be;
+    color: #36ad68;
     padding: 10px;
     width: 100%;
     /* Asegúrate de que el header ocupe el ancho completo */
@@ -25,10 +25,10 @@ header {
 }
 
 #calculadora {
-    border: 2px solid #000;
+    border: 6px solid #097cb1;
     /* Borde negro */
     padding: 20px;
-    background-color: #e483d8;
+    background-color: #b9be11;
     /* Fondo rosa claro */
     border-radius: 20px;
 }
@@ -38,18 +38,18 @@ header {
     margin-bottom: 10px;
     background-color: #080606;
     /* Fondo negro */
-    color: #d416be;
+    color: #04ce30;
     /* Texto rosa claro */
     padding: 5px;
     border: none;
-    border-radius: 10px;
-    height: 40px;
+    border-radius: 20px;
+    height: 50px;
 }
 
 #botones button {
     background-color: #000;
     /* Fondo negro */
-    color: #ffccf9;
+    color: #20ca17;
     /* Texto rosa claro */
     padding: 10px 15px;
     margin: 5px;
@@ -60,7 +60,7 @@ header {
 }
 
 #botones button:hover {
-    opacity: 0.8;
+    opacity: 0.3;
 }
 
 video {
