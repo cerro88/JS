@@ -1,10 +1,27 @@
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    /* Alinea los hijos verticalmente */
     align-items: center;
+    /* Centra los hijos horizontalmente */
+    justify-content: center;
+    /* Centra los hijos verticalmente */
     height: 100vh;
-    background-color: #0b050a;
-    /* Fondo rosa claro */
+    /* Usa el 100% de la altura de la ventana */
+    margin: 0;
+    /* Elimina el margen predeterminado */
+    background-color: #000;
+    /* Color de fondo del cuerpo */
+}
+
+header {
+    color: #d416be;
+    padding: 10px;
+    width: 100%;
+    /* Asegúrate de que el header ocupe el ancho completo */
+    box-sizing: border-box;
+    /* Incluye el padding en el cálculo del ancho */
+    text-align: center;
 }
 
 #calculadora {
