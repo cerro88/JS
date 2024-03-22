@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.min.js">
+        //biblioteca de terceros para hacer los cálculos
+    </script>
+    <title>Calculadora Simple</title>
+    <script>
+        //se crea una función que aceptará como parametro el valor del botón presionado
+        function presionarBoton(valor) {
+            //document.getElementById buscará en el html el elemento con el id pantalla
+            //.value accede al valor actual del elemento input
+            //toma el valor actual del input y le añade el valor pasado a la función
+            document.getElementById("pantalla").value += valor;
+        }
+
+        //function calcularResultado() {
+        //    var resultado = eval(document.getElementById("pantalla").value);
+        //   document.getElementById("pantalla").value = resultado;
+        // } EVAL PUEDE EJECUTAR CUALQUIER CÓDIGO JS Y ES PELIGROSO, ELIJO 
+        //UNA BIBLIOTECA DE TERCEROS math.evalue que está diseñada para cálculos matemáticos
+
+        // Define una función llamada calcularResultado sin parámetros.
+        function calcularResultado() {
+            // Intenta ejecutar el bloque de código siguiente.
+            try {
+                // Obtiene el valor actual de la entrada (la expresión matemática) del elemento con id "pantalla" y lo evalúa.
+                // El resultado de evaluar la expresión se almacena en la variable resultado.
+                var resultado = math.evaluate(document.getElementById("pantalla").value);
+
+                // Verifica si el resultado es infinito o no es un número, lo cual puede indicar una división por cero u otro error matemático.
+                if (!isFinite(resultado) || isNaN(resultado)) {
+                    // Si el resultado es infinito o no es un número, establece el valor del elemento con id "pantalla" a "Error matemático".
+                    document.getElementById("pantalla").value = "PERO QUE COÑO ENTRE 0!";
+                } else if (resultado === 5) {
+                    //si el resultado es igual a 5
+                    document.getElementById("pantalla").value = resultado + " POR EL CULO TE LA IN..."
+                        //si se multiplica 
+                } else {
+                    // Si el resultado es un número finito, actualiza el valor del elemento con id "pantalla" con el resultado.
+                    document.getElementById("pantalla").value = resultado;
+                }
+                // Captura cualquier error que ocurra durante la ejecución del bloque try.
+            } catch (error) {
+                // Si ocurre un error (por ejemplo, una expresión mal formada), muestra "Expresión inválida" en el elemento con id "pantalla".
+                document.getElementById("pantalla").value = "No estás hablando matemàticas...";
+                // También, imprime el error en la consola del navegador para depuración.
+                console.error(error);
+            }
+        }
+
+        // Define una función llamada limpiarPantalla sin parámetros.
+        function limpiarPantalla() {
+            // '.value' representa el valor actual del elemento input, es decir, lo que se muestra en la pantalla de la calculadora.
+            // Asigna una cadena vacía ("") al valor del elemento input.
+            // Esto efectivamente borra o limpia cualquier texto que se estuviera mostrando en la pantalla de la calculadora.
+            document.getElementById("pantalla").value = "";
+        }
+    </script>
+    <link rel="stylesheet" href="/calculadora_friki/style.css">
+
+</head>
+
+<body>
+
+    <div id="calculadora">
+        <!-- Pantalla para mostrar la entrada/resultado -->
+        <input type="text" id="pantalla" readonly>
+        <div id="botones">
+            <!-- Botones de dígitos y operaciones -->
+            <button onclick="presionarBoton('1')">1</button>
+            <button onclick="presionarBoton('2')">2</button>
+            <button onclick="presionarBoton('3')">3</button>
+            <button onclick="presionarBoton('+')">+</button>
+            <br>
+            <button onclick="presionarBoton('4')">4</button>
+            <button onclick="presionarBoton('5')">5</button>
+            <button onclick="presionarBoton('6')">6</button>
+            <button onclick="presionarBoton('-')">-</button>
+            <br>
+            <button onclick="presionarBoton('7')">7</button>
+            <button onclick="presionarBoton('8')">8</button>
+            <button onclick="presionarBoton('9')">9</button>
+            <button onclick="presionarBoton('*')">*</button>
+            <br>
+            <button onclick="presionarBoton('0')">0</button>
+            <button onclick="presionarBoton('/')">/</button>
+            <button onclick="calcularResultado()">=</button>
+            <button onclick="limpiarPantalla()">C</button>
+        </div>
+    </div>
+</body>
+
+</html>
