@@ -62,3 +62,9 @@ header {
 #botones button:hover {
     opacity: 0.8;
 }
+
+video {
+    border-radius: 300px 300px 300px 300px;
+    max-width: 300px;
+    margin-top: 20px;
+}
